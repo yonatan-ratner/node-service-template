@@ -1,0 +1,19 @@
+
+name: stt-frontend # Change names accordingly
+services:
+  api:
+    stdin_open: true
+    tty: true
+    container_name: stt-frontend-container
+    build:
+      context: ./Project
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+        - type: bind
+          source: './Project'
+          target: /app
+    ports:
+        - 127.0.0.1:3000:3000/tcp
+    image: stt-frontend-image
+    command: bash # todo - change to index.js for example

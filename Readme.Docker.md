@@ -1,4 +1,4 @@
-0. build image
+--0--. build image
 ```
 docker build -t stt-frontend-image .
 ```
@@ -13,9 +13,10 @@ stt-frontend-image \
 bash
 ```
 
-*. make and run temporary container
-add the ```--rm``` flag
-
-
-2. start permanent container
+2. start container
 ``` docker start -i stt-frontend-dev ```
+
+3. run frontend solution
+    3.1 ```cd stt-frontend ```
+    3.2 ```yarn install ```
+    3.3 ```yarn run dev --host```
