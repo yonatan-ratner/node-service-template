@@ -1,7 +1,8 @@
 - setup local dev env with shell access
-``` docker-compose start api; \
-    docker-compose exec api bash; \
-    docker-compose stop api 
+``` 
+docker-compose start api; \
+docker-compose exec api bash; \
+docker-compose stop api 
 ```
 
 - setup localhost live-service
