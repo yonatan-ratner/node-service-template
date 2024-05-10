@@ -6,7 +6,11 @@ docker-compose stop api
 ```
 
 - setup localhost live-service
-``` docker-compose up api ```
+```
+docker-compose up api
+```
 
 - setup for deployment
-``` TODO ```
+```
+ Changes per service
+```
