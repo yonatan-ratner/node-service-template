@@ -1,16 +1,19 @@
-- setup local dev env with shell access
+- simulate container as local dev env with bash shell access
 ``` 
-docker-compose start api; \
-docker-compose exec api bash; \
-docker-compose stop api 
+ docker compose run api bash
 ```
 
 - setup localhost live-service
-```
-docker-compose up api
+``` 
+docker compose up api 
 ```
 
 - setup for deployment
+``` 
+TODO 
 ```
- Changes per service
+
+* when changing dependencies
+``` 
+docker compose build 
 ```

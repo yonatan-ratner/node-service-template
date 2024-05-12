@@ -1,19 +1,28 @@
 
-name: stt-frontend # Change names accordingly
+name: stt-frontend # Change name accordingly
 services:
   api:
     stdin_open: true
     tty: true
-    container_name: stt-frontend-container
+    container_name: stt-frontend-container # Change name accordingly
     build:
-      context: ./Project
+      context: .
       dockerfile: Dockerfile
       target: base
     volumes:
         - type: bind
-          source: './Project'
-          target: /app
-    ports:
-        - 127.0.0.1:3000:3000/tcp
+          source: './Project' # Project in local directory
+          target: /usr/src/app # Project in container directory
+    ports: # host:port binding on localhost between host and container
+        - "3000:3000" # development port, add as required.
     image: stt-frontend-image
-    command: bash # todo - change to index.js for example
+    develop:
+      watch: # Adapt this section for the relevant 'hot reload' equivalent
+        - action: sync 
+          path: ./Project
+          target: /usr/src/app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./Project/package.json
+    command: yarn run dev --host # change as needed
