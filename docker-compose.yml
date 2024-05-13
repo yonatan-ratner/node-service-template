@@ -25,4 +25,4 @@ services:
             - node_modules/
         - action: rebuild
           path: ./Project/package.json
-    command: yarn run dev --host # change as needed
+    command: TODO
