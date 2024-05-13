@@ -1,10 +1,10 @@
 
-name: stt-frontend # Change name accordingly
+name: TODO ## Change name accordingly ##
 services:
   api:
     stdin_open: true
     tty: true
-    container_name: stt-frontend-container # Change name accordingly
+    container_name: TODO-container ## Change name accordingly ##
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,7 +15,7 @@ services:
           target: /usr/src/app # Project in container directory
     ports: # host:port binding on localhost between host and container
         - "3000:3000" # development port, add as required.
-    image: stt-frontend-image
+    image: TODO-image ## Change name Accordingly ##
     develop:
       watch: # Adapt this section for the relevant 'hot reload' equivalent
         - action: sync 
